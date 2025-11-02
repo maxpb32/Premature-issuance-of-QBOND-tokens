@@ -35,7 +35,35 @@ If this solution is rejected, we will submit the second solution to you.
 
 # Add "Emergency Unlock" Feature
 
-We want to add an "emergency unlock" function on QBOND's smart contract in order to foster a more solid and secure Liquid Staking Token (LST) in Qubic's ecosystem. It consists of:
+We want to add an "emergency unlock" function on QBOND's smart contract in order to foster a more solid and secure Liquid Staking Token (LST) in Qubic's ecosystem. It consists of :
+
+* At unlock action, the smart contract tries to sell user's MBND tokens on the marketplace if there's any bid higher than the value they would receive from unlocking directly in QEARN
+* If no such favorable bid exists, the SC then burns the MBND tokens and unlocks the original funds from QEARN, releasing the user from a trapped position
+
+This way, the protocol doesn't makes unnecessary unlocks, preserving the maximum amount of QUs locked in QEARN, while still securing the investor from potentially catastrophic financial losses.
+
+## Rationale
+The proposed function is specially useful in exceptional scenarios where there's no liquidity on MBND's secondary market, or when liquidation on the secondary market causes a loss to user's capital.
+
+For example : 
+* Consider that the average APY for locking QUs is 10% and, thus, MBND tokens are being traded around this APY in the secondary market.
+* Now, an investor locks 1bn QUs via QBOND, expecting similar returns; however, due to a late surge of deposits in that epoch, the final APY plummets to an abnormally low 3%.
+
+In that case, we have the following : 
+* A QEARN user, facing this 3% APY, could simply unlock their funds, losing virtually nothing, and waiting for a more favorable epoch.
+* The QBOND user, if he wants to liquidate, is trapped in a loss position. Their only exit is the marketplace, which is saturated with MBND tokens from other epochs offering the standard 10% APY. To compete, they would've to sell their 3% APY bond at a massive discount, pricing it so the buyer effectively earns a 10% yield.
+
+Being more precise, the calculation for this discount is : 
+
+1bn × (1.03/1.10) ​≈936 millions de QUs
+
+The price he would've to sell in order to offer buyers a 10% APY. This forces the investor into a -6.4% capital loss, just to access his funds.
+
+If the "emergency unlock" function is added, the user could simply directly unlock in QEARN, not incurring in losses and completely extinguishing any risk related to the secondary market (be it illiquidity, be it being trapped in a liquidation that causes him bigger losses than simply unlocking).
+
+## Benefits
+Include here all the benefits the ecosystem of a crypto network gains in having a solid LST in it (lending)
+
 
 
 

@@ -1,29 +1,27 @@
 # Proposal for QBOND
 ## Overview of QBOND’s functionality
-The Qbond smart contract is implemented through the tokenization of staked positions. Each epoch issues tokens named MBNDXXX (XXX - epoch number), which represent staked position tokens. The maximum number of tokens in the Qubic network is 52, since rewards for staking in Qearn are distributed 52 weeks after the token is issued — at which point the token is burned. The core idea behind the Qbond smart contract lies in the tokenization of staking positions. This approach not only provides a better user experience (tokens are visible directly in the wallet) and easier trading, but also enables the creation of a DeFi ecosystem built upon these assets. 
+The Qbond smart contract is implemented through the tokenization of staked positions. Each epoch issues tokens named MBNDXXX (XXX - epoch number), which represent staked position tokens. The maximum number of MBND tokens in the Qubic network is 52, since rewards for staking in Qearn are distributed 52 weeks after the token is issued — at which point the token is burned. The core idea behind the Qbond smart contract lies in the tokenization of staking positions. This approach not only provides a better user experience (tokens are visible directly in the wallet) and easier trading, but also enables the creation of a DeFi ecosystem built upon these assets. 
 
 For example, the announced Qloan smart contract will be able to use MBND tokens as collateral. At present, the MBND token is considered the most stable asset, as it offers a predictable yield by the end of its lifecycle — making it a perfect fit for use as collateral.
  
 # Future problem of token issuance fees
-Due to the introduction of high fees for calling the token issuance function (and based on current discussions, these fees may become significantly large), the Qbond smart contract’s lifespan may be limited. This situation requires immediate adjustments, specifically addressing the issue of expensive token issuance — and this must be done as soon as possible.
+Due to the introduction of high fees for calling the token issuance function (and based on current discussions, these fees may become significantly large), the Qbond smart contract’s lifespan may be limited. This situation requires immediate adjustments, specifically addressing the issue of expensive token issuance — and this must be done as soon as possible, otherwise the smart contract won't be able to continue functioning.
 
-Currently, we see two potential solutions, the first option we are proposing to you in this proposal is :
+In order to maintain an uninterrupted correct functioning of the smart contract,we propose the following temporary adjustment :
 
-* Pre-mint tokens in advance (Until the next halving). This would provide time to rethink and develop an alternative approach to the smart contract mechanism. 
-
-If this solution is rejected, we will submit the second solution to you.
+* Pre-mint tokens in advance (Until the next halving). This would provide time to rethink and develop an alternative approach to the smart contract mechanism, more aligned and adapted to this new chapter that Qubic's smart contract are breaking into. 
 
 # Add "Emergency Unlock" Feature
 
-We want to add an "emergency unlock" function on QBOND's smart contract in order to foster a more solid and secure Liquid Staking Token (LST) in Qubic's ecosystem. It consists of :
+Also, we want to add an "emergency unlock" function on QBOND's smart contract in order to foster a more solid and secure Liquid Staking Token (LST) in Qubic's ecosystem. It consists of :
 
 * At unlock action, the smart contract tries to sell user's MBND tokens on the marketplace if there's any bid higher than the value they would receive from unlocking directly in QEARN
 * If no such favorable bid exists, the SC then burns the MBND tokens and unlocks the original funds from QEARN, releasing the user from a trapped position
 
 This way, the protocol doesn't makes unnecessary unlocks, preserving the maximum amount of QUs locked in QEARN, while still securing the investor from potentially catastrophic financial losses.
 
-## Rationale
-The proposed function is specially useful in exceptional scenarios where there's no liquidity on MBND's secondary market, or when liquidation on the secondary market causes a loss to user's capital.
+## Rationale of the "Emergency Unlock"
+The proposed function is specially useful in two exceptional scenarios : when there's no liquidity in the secondary market of MNBDs, causing investor's funds to be trapped in an unlockable position, or when liquidation on the secondary market causes a loss to user's capital, bigger than if he simply unlocked.
 
 For example : 
 * Consider that the average APY for locking QUs is 10% and, thus, MBND tokens are being traded around this APY in the secondary market.
@@ -41,8 +39,8 @@ The price he would've to sell in order to offer buyers a 10% APY. This forces th
 
 If the "emergency unlock" function is added, the user could simply directly unlock in QEARN, not incurring in losses and completely extinguishing any risk related to the secondary market (be it illiquidity, be it being trapped in a liquidation that causes him bigger losses than simply unlocking).
 
-## Benefits
-By giving liquidity to staked QUs, MBND tokens unlocks capital in Qubic's network; bringing a lot of benefits for the whole ecosystem, such as :
+## Benefits of proposed changes
+These changes guarantees that Qubic's network have a solid solution for Liquid Staking Token (LST) for investors, giving liquidity to staked QUs and boosting Qubic's ecosystem by unlocking idle capital; some of the benefits a secure and fully functional LST brings for the whole ecosystem are :
 
 * __Enhanced capital utilization across the ecosystem :__
 

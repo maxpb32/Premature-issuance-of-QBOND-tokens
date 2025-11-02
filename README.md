@@ -55,7 +55,7 @@ As the same capital can be utilized in other activities (trading, providing liqu
 
  Liquid staking empower users to more efficiently use their capital, be it for risk-mitigation or for leveraged strategies; it's essential for leveraged staking, restaking, lending, basis trading, derivative markets and other yield farming strategies.
 
- With these benefits, there's no doubt Qubic network would attract more users and, consequentially, more capital. Businesses would be more incentivized in building in the network, creating financial protocols that, thanks to Qubic's infrastructure and architecture — that gives its protocols unparalleled advantage regarding speed and fees —, can even outcompete more stablished businesses in other networks  
+With these benefits, there's no doubt Qubic network would attract more users and, consequentially, more capital. Businesses would be more incentivized in building in the network, creating financial protocols that — thanks to Qubic's infrastructure and architecture, that gives protocols in its network unparalleled advantage regarding speed and fees — could even outcompete more stablished businesses in other networks.
 
  Our goal is to support the growth of the Qubic ecosystem, which is why we strive to make our projects attractive, user-friendly, and truly valuable. 
 

@@ -1,4 +1,12 @@
-# Proposal for QBOND
+# Proposal to allow Pre-mint tokens and add emergency unlock features to Qbond
+
+## Proposal
+Allow early issuance of MBND tokens and the addition of the Emergency Unlock Feature.
+
+> Option 0: no
+
+> Option 1: yes
+
 ## Overview of QBOND’s functionality
 The Qbond smart contract is implemented through the tokenization of staked positions. Each epoch issues tokens named MBNDXXX (XXX - epoch number), which represent staked position tokens. The maximum number of MBND tokens in the Qubic network is 52, since rewards for staking in Qearn are distributed 52 weeks after the token is issued — at which point the token is burned. The core idea behind the Qbond smart contract lies in the tokenization of staking positions. This approach not only provides a better user experience (tokens are visible directly in the wallet) and easier trading, but also enables the creation of a DeFi ecosystem built upon these assets. 
 
